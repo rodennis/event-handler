@@ -28,14 +28,17 @@ async function getEventList() {
       //   }
       // })
       for (let i = 0; eventArray.length > i; i++) {
-        if (eventArray[i][0].toLowerCase().includes(value)) {
-          eventId = eventArray[i][1]
-          setTimeout(() => { getApiId(eventId) }, i * 100)
-        }
+        setTimeout(() => {
+          if (eventArray[i][0].toLowerCase().includes(value)) {
+            eventId = eventArray[i][1]
+            getApiId(eventId)
+          }
+        }, i * 100)
       }
     })
 
-  } catch (error) {
+  }
+  catch (error) {
     console.log(error);
   }
 }
@@ -46,22 +49,23 @@ getEventList()
 // loop through API data √
 // Take user input √
 // Make object of key:value pairs for name and id √
-// Make data searchable with user input
+// Make data searchable with user input √
 async function getApiId(eventId) {
 
   try {
     const url = `https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
     const getData = await axios.get(url)
-    const data = getData.data
-    console.log(data);
-  } catch (error) {
+    const idData = getData.data
+    console.log(idData);
+  }
+  catch (error) {
     console.log(error);
   }
-  // Retrieve ID from user input relevant to event
+  // Retrieve ID from user input relevant to event √
 
-  // store ID in a variable
-  // call second API and insert variable in ID field
-  // Store API data from second API
+  // store ID in a variable √
+  // call second API and insert variable in ID field √
+  // Store API data from second API √
 }
 // Display information onto webpage
 // DONE!
