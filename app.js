@@ -2,9 +2,17 @@ let form = document.querySelector('#event-subm')
 let input = document.querySelector('#event-search')
 
 // Retrieve API √
+// Store API in a variable for use √
+// loop through API data √
+// Take user input √
+// Make object of key:value pairs for name and id √
+// Make data searchable with user input √
+// Retrieve ID from user input relevant to event √
+// store ID in a variable √
+
 async function getEventList() {
   try {
-    const url = 'https://app.ticketmaster.com/discovery/v2/events.json?size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi'
+    const url = 'https://app.ticketmaster.com/discovery/v2/events.json?page=1&size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi'
     const getData = await axios.get(url)
     const data = getData.data._embedded.events
     let eventObj = {}
@@ -16,27 +24,20 @@ async function getEventList() {
 
     let eventArray = Object.entries(eventObj)
 
-
     form.addEventListener('submit', (e) => {
       e.preventDefault()
       let value = input.value
       let eventId;
-      // eventArray.forEach(e => {
-      //   if (e[0].toLowerCase().includes(value)) {
-      //     eventId = e[1];
-      //     setTimeout(() => { getApiId(eventId) }, 3000)
-      //   }
-      // })
       for (let i = 0; eventArray.length > i; i++) {
         setTimeout(() => {
           if (eventArray[i][0].toLowerCase().includes(value)) {
             eventId = eventArray[i][1]
             getApiId(eventId)
+
           }
         }, i * 100)
       }
     })
-
   }
   catch (error) {
     console.log(error);
@@ -45,27 +46,49 @@ async function getEventList() {
 
 getEventList()
 
-// Store API in a variable for use √
-// loop through API data √
-// Take user input √
-// Make object of key:value pairs for name and id √
-// Make data searchable with user input √
+// call second API and insert variable in ID field √
+// Store API data from second API √
+
 async function getApiId(eventId) {
 
   try {
     const url = `https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
     const getData = await axios.get(url)
     const idData = getData.data
-    console.log(idData);
+    let idName = idData.name;
+    let idUrl = idData.url;
+    let date = idData.dates.start.localDate
+    let priceMin = idData.priceRanges[0].min
+    let priceMax = idData.priceRanges[0].max
+    let image = idData.images[5].url
+    console.log(idName);
+    console.log(priceMin);
+    console.log(priceMax);
+    console.log(idUrl)
+    console.log(date)
+    console.log(image);
   }
   catch (error) {
     console.log(error);
   }
-  // Retrieve ID from user input relevant to event √
-
-  // store ID in a variable √
-  // call second API and insert variable in ID field √
-  // Store API data from second API √
 }
 // Display information onto webpage
+// Create divs for each event 
+
 // DONE!
+
+// POST MVP
+
+// async function secondPageApi() {
+//   try {
+//     let url = 'https://app.ticketmaster.com/discovery/v2/events.json?page=1&size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi'
+//     let getData = await axios.get(url)
+//     let page1Data = getData.data._embedded.events
+//     console.log(page1Data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+// secondPageApi()
+
