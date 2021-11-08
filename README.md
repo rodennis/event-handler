@@ -9,9 +9,7 @@ The name of your project.
 My website is an event info website! When you first visit the website it will ask you what event you would like info on. It will have a drop down menu of different future events you can choose from. Once an event is chosen you will then be presented with info about that chosen event. You will be given links to buy tickets and see seating arrangements.
 
 ## API and Data Sample
-API = Ticketmaster
-
-Link = https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+API: [TicketMaster](https://developer.ticketmaster.com/products-and-docs/apis/getting-started/)
 ```
 "_embedded": {
         "events": [
@@ -27,7 +25,7 @@ Link = https://developer.ticketmaster.com/products-and-docs/apis/getting-started
 
 ## Wireframes
 
-Link: https://www.figma.com/file/GjWOFTXepABfJfX5qQsTEP/Untitled?node-id=2%3A2 
+[Wireframe](https://www.figma.com/file/GjWOFTXepABfJfX5qQsTEP/Untitled?node-id=2%3A2)
 
 Home page - This is going to be where the user first lands on when visiting the site. They will be greeted with a welcome and the site name, and be asked to search for an event they would like info on.
 
@@ -59,8 +57,7 @@ Responsive design - This will be the user experience on a mobile device. It will
 |November 12th| Upload to Website | Incomplete
 
 ## Priority Matrix
-
-link: https://www.figma.com/file/ENHLcmb2GooOCdSY4qIKl5/Untitled?node-id=0%3A1
+[Priority Matrix](https://www.figma.com/file/ENHLcmb2GooOCdSY4qIKl5/Untitled?node-id=0%3A1)
 
 - Retrieving API data
 - Making data searchable
