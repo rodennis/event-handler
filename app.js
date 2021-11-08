@@ -22,8 +22,9 @@ async function getEventList() {
       let value = input.value
       let eventId;
       eventArray.forEach(e => {
-        if (value == e[0]) {
+        if (e[0].toLowerCase().includes(value)) {
           eventId = e[1];
+          console.log(eventId);
         }
       })
 
