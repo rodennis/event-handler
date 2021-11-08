@@ -6,74 +6,76 @@ The name of your project.
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+My website is an event info website! When you first visit the website it will ask you what event you would like info on. It will have a drop down menu of different future events you can choose from. Once an event is chosen you will then be presented with info about that chosen event. You will be given links to buy tickets and see seating arrangements.
 
 ## API and Data Sample
+API = Ticketmaster
 
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+Link = https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
+```
+"_embedded": {
+        "events": [
+            {
+                "name": "Brooklyn Nets vs. Phoenix Suns",
+                "type": "event",
+                "id": "Z7r9jZ1AdFUqk",
+                "test": false,
+                "url": "https://www.ticketmaster.com/event/Z7r9jZ1AdFUqk",
+                "locale": "en-us",
+                "images":
+```
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+Link: https://www.figma.com/file/GjWOFTXepABfJfX5qQsTEP/Untitled?node-id=2%3A2 
+
+Home page - This is going to be where the user first lands on when visiting the site. They will be greeted with a welcome and the site name, and be asked to search for an event they would like info on.
+
+Searched event - This will be where the user goes after searching for an event. They will be provided with an image of the even, along with two info sections. one containing the most important info needed about the event. The second containing info relevant to the event. 
+
+Responsive design - This will be the user experience on a mobile device. It will be the same experience as the desktop version, but scaled down.
 
 ### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
+  
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Allow user to Search through list of events.
+- Render data of event onto page.
+- Redirect user to page to buy tickets.
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
-- Use local storage to save user favorites
+- Allow user to search for an event with key words.
+- Allow user to buy tickets directly on website
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|November 8th| Project Approval/Pseudocode/Retrieve API data/Store API data| Incomplete
+|November 9th| Make API Data Searchable | Incomplete
+|November 10th| Create HTML elements to display API data| Incomplete
+|November 11th| CSS styling | Incomplete
+|November 12th| Upload to Website | Incomplete
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+link: https://www.figma.com/file/ENHLcmb2GooOCdSY4qIKl5/Untitled?node-id=0%3A1
+
+- Retrieving API data
+- Making data searchable
+- Create HTML elements 
+- CSS styling
+- Upload website
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-
-## Code Snippet
-
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
-
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
-
-## Change Log
- Use this section to document what changes were made and the reasoning behind those changes. 
+| Retrieving API data | H | 2hrs|  |  |
+| Store data | H | 1hr|  |  |
+| Create a way to filter through data | H | 4hrs|  |  |
+| Create HTML elements to display data | L | 2hrs
+| Create Links to Buy tickets | L | 1hr
+| CSS Styling | H | 4hrs
+| Upload Webiste | L | 1hr
