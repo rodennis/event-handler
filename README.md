@@ -68,10 +68,12 @@ Responsive design - This will be the user experience on a mobile device. It will
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
+| PseudoCoding | H | 3hrs | | |
 | Retrieving API data | H | 2hrs|  |  |
 | Store data | H | 1hr|  |  |
 | Create a way to filter through data | H | 4hrs|  |  |
+|Debugging | H | 4hrs | | |
 | Create HTML elements to display data | L | 2hrs
 | Create Links to Buy tickets | L | 1hr
 | CSS Styling | H | 4hrs
-| Upload Webiste | L | 1hr
+| Upload Website | L | 1hr
