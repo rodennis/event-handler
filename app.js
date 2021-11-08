@@ -20,13 +20,14 @@ async function getEventList() {
     form.addEventListener('submit', (e) => {
       e.preventDefault()
       let value = input.value
+      let eventId;
       eventArray.forEach(e => {
         if (value == e[0]) {
-          console.log(e[1]);
+          eventId = e[1];
         }
       })
 
-      // getApiId(value)
+      getApiId(eventId)
     })
 
   } catch (error) {
@@ -41,12 +42,13 @@ getEventList()
 // Take user input √
 // Make object of key:value pairs for name and id √
 // Make data searchable with user input
-async function getApiId(value) {
+async function getApiId(eventId) {
 
   try {
     const url = `https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
     const getData = await axios.get(url)
     const data = getData.data
+    console.log(data);
   } catch (error) {
     console.log(error);
   }

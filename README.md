@@ -76,4 +76,5 @@ Responsive design - This will be the user experience on a mobile device. It will
 | Create HTML elements to display data | L | 2hrs
 | Create Links to Buy tickets | L | 1hr
 | CSS Styling | H | 4hrs
+|Responsiveness | H | 2hrs | | |
 | Upload Website | L | 1hr
