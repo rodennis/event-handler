@@ -1,8 +1,7 @@
 # Project Overview
 
-## EventHandler.com
-
-The name of your project.
+## Project Name 
+Event Handler
 
 ## Project Description
 
