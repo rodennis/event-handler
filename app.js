@@ -21,14 +21,18 @@ async function getEventList() {
       e.preventDefault()
       let value = input.value
       let eventId;
-      eventArray.forEach(e => {
-        if (e[0].toLowerCase().includes(value)) {
-          eventId = e[1];
-          console.log(eventId);
+      // eventArray.forEach(e => {
+      //   if (e[0].toLowerCase().includes(value)) {
+      //     eventId = e[1];
+      //     setTimeout(() => { getApiId(eventId) }, 3000)
+      //   }
+      // })
+      for (let i = 0; eventArray.length > i; i++) {
+        if (eventArray[i][0].toLowerCase().includes(value)) {
+          eventId = eventArray[i][1]
+          setTimeout(() => { getApiId(eventId) }, i * 100)
         }
-      })
-
-      getApiId(eventId)
+      }
     })
 
   } catch (error) {
