@@ -4,28 +4,39 @@
   width: 100%;
   margin-top: -12px;
   padding-bottom: 20px;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.5);
 }
 
 main {
   display: flex;
-  flex-direction: row;
-  border: 5px solid black;
+  flex-direction: column;
   margin-top: 100px;
 }
 
 .pictures {
   flex: 1;
-  border: 5px solid black;
+  
 }
 
 .info {
   flex: 1;
-  border: 5px solid black;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 50px;
+  background-color: rgb(128,128,128, 0.5);
+  padding: 20px;
+  font-family: 'ubuntu';
 }
 
 img {
-  width: 300px; 
+  width: 600px; 
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .eventPicture {

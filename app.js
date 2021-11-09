@@ -3,8 +3,7 @@ let input = document.querySelector('#event-search')
 let head = document.querySelector('head')
 let formBreak = document.querySelector('.form-break')
 let webName = document.querySelector('.name')
-let eventImage = document.querySelector('.pictures')
-let eventInfo = document.querySelector('.info')
+let main = document.querySelector('main')
 let link = document.createElement('link')
 let h3 = document.createElement('h3')
 
@@ -73,22 +72,48 @@ async function getApiId(eventId) {
     let priceMin = idData.priceRanges[0].min
     let priceMax = idData.priceRanges[0].max
     let image = idData.images[5].url
-    console.log(idName);
-    let div = document.createElement('div')
-    div.classList.add('eventPicture')
-    let img = document.createElement('img');
-    img.src = image
-    div.appendChild(img)
-    eventImage.appendChild(div)
+    createDomElements(idName, idUrl, date, priceMin, priceMax, image)
   }
   catch (error) {
     console.log(error);
   }
 }
-// Display information onto webpage
-// Create divs for each event 
+// Display information onto webpage √
+// Create divs for each event √
 
-// DONE!
+function createDomElements(idName, idUrl, date, priceMin, priceMax, image) {
+  let div = document.createElement('div')
+  let img = document.createElement('img');
+  let eventImage = document.createElement('div')
+  let eventInfo = document.createElement('div')
+  let infoDiv = document.createElement('div')
+  let buyTickets = document.createElement('p')
+  let eachEventName = document.createElement('p')
+  let eachEventDate = document.createElement('p')
+  let eventPriceMin = document.createElement('p')
+  let eventPriceMax = document.createElement('p')
+  eventImage.classList.add('pictures')
+  eventInfo.classList.add('info')
+  div.classList.add('eventPicture')
+  buyTickets.innerHTML = `Buy Tickets: <a href="${idUrl}">Ticketmaster.com</a>`
+  img.src = image
+  eachEventName.innerText = `Event Name: ${idName}`
+  eachEventDate.innerText = `Event Date: ${date}`
+  eventPriceMin.innerText = `Minimum Price range: ${priceMin}`
+  eventPriceMax.innerText = `maximum Price Range: ${priceMax}`
+  main.appendChild(eventImage)
+  main.appendChild(eventInfo)
+  eventInfo.appendChild(infoDiv)
+  div.appendChild(img)
+  eventImage.appendChild(div)
+  infoDiv.appendChild(eachEventName)
+  infoDiv.appendChild(eachEventDate)
+  infoDiv.appendChild(eventPriceMin)
+  infoDiv.appendChild(eventPriceMax)
+  infoDiv.appendChild(buyTickets)
+}
+
+// DONE! √
 
 // POST MVP
 
