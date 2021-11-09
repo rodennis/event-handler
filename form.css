@@ -1,0 +1,34 @@
+.form {
+  top: 0px;
+  border-bottom: 3px solid black;
+  width: 100%;
+  margin-top: -12px;
+  padding-bottom: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  border: 5px solid black;
+  margin-top: 100px;
+}
+
+.pictures {
+  flex: 1;
+  border: 5px solid black;
+}
+
+.info {
+  flex: 1;
+  border: 5px solid black;
+}
+
+img {
+  width: 300px; 
+  margin-top: 50px;
+}
+
+.eventPicture {
+  text-align: center;
+
+}

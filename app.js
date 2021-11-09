@@ -1,6 +1,12 @@
 let form = document.querySelector('#event-subm')
 let input = document.querySelector('#event-search')
 let head = document.querySelector('head')
+let formBreak = document.querySelector('.form-break')
+let webName = document.querySelector('.name')
+let eventImage = document.querySelector('.pictures')
+let eventInfo = document.querySelector('.info')
+let link = document.createElement('link')
+let h3 = document.createElement('h3')
 
 // Retrieve API √
 // Store API in a variable for use √
@@ -37,12 +43,12 @@ async function getEventList() {
           }
         }, i * 100)
       }
-      let webName = document.querySelector('.name')
-      let link = document.createElement('link')
       link.setAttribute('rel', 'stylesheet')
       link.setAttribute('href', 'form.css')
       head.appendChild(link)
       webName.remove()
+      formBreak.remove()
+      input.value = ''
     })
   }
   catch (error) {
@@ -67,7 +73,13 @@ async function getApiId(eventId) {
     let priceMin = idData.priceRanges[0].min
     let priceMax = idData.priceRanges[0].max
     let image = idData.images[5].url
-
+    console.log(idName);
+    let div = document.createElement('div')
+    div.classList.add('eventPicture')
+    let img = document.createElement('img');
+    img.src = image
+    div.appendChild(img)
+    eventImage.appendChild(div)
   }
   catch (error) {
     console.log(error);
