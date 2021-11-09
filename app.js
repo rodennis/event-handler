@@ -1,5 +1,6 @@
 let form = document.querySelector('#event-subm')
 let input = document.querySelector('#event-search')
+let head = document.querySelector('head')
 
 // Retrieve API √
 // Store API in a variable for use √
@@ -33,10 +34,15 @@ async function getEventList() {
           if (eventArray[i][0].toLowerCase().includes(value)) {
             eventId = eventArray[i][1]
             getApiId(eventId)
-
           }
         }, i * 100)
       }
+      let webName = document.querySelector('.name')
+      let link = document.createElement('link')
+      link.setAttribute('rel', 'stylesheet')
+      link.setAttribute('href', 'form.css')
+      head.appendChild(link)
+      webName.remove()
     })
   }
   catch (error) {
@@ -61,12 +67,7 @@ async function getApiId(eventId) {
     let priceMin = idData.priceRanges[0].min
     let priceMax = idData.priceRanges[0].max
     let image = idData.images[5].url
-    console.log(idName);
-    console.log(priceMin);
-    console.log(priceMax);
-    console.log(idUrl)
-    console.log(date)
-    console.log(image);
+
   }
   catch (error) {
     console.log(error);

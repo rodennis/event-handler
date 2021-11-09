@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="background" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="app.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Ubuntu:ital,wght@1,500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <script src="background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>Event Handler</title>
 </head>
 
 <body>
-  <form id="event-subm" type="submit">
-    <input id="event-search" type="text" placeholder="Search for an Event">
-    <button id="search">Search</button>
+  <div class="container">
+    <div class="name">
+      <h1>Event <br> Handler</h1>
+    </div>
+    <div class="form">
+      <form id="event-subm" type="submit">
+        <input id="event-search" type="text" placeholder="Search for an Event"><br>
+        <button id="search">Search</button>
+
+    </div>
+
+  </div>
   </form>
 </body>
 
