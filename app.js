@@ -32,6 +32,7 @@ async function getEventList() {
 
     form.addEventListener('submit', (e) => {
       e.preventDefault()
+      main.innerHTML = ''
       let value = input.value
       let eventId;
       for (let i = 0; eventArray.length > i; i++) {
