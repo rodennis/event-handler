@@ -16,47 +16,60 @@ let h3 = document.createElement('h3')
 // Retrieve ID from user input relevant to event √
 // store ID in a variable √
 
+let eventArray = []
+
 async function getEventList() {
+
   try {
-    const url = 'https://app.ticketmaster.com/discovery/v2/events.json?page=1&size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi'
-    const getData = await axios.get(url)
-    const data = getData.data._embedded.events
-    let eventObj = {}
-    for (let i = 0; data.length > i; i++) {
-      let name = data[i].name
-      let id = data[i].id
-      eventObj[name] = id
+    for (let i = 0; i < 4; i++) {
+      const url = `https://app.ticketmaster.com/discovery/v2/events.json?page=${i}&size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
+      const getData = await axios.get(url)
+      const data = getData.data._embedded.events
+      let eventObj = {}
+
+      for (let i = 0; data.length > i; i++) {
+        // let name = data[i].name
+        // let id = data[i].id
+        // eventObj[name] = id
+        let event = [data[i].name, data[i].id]
+        eventArray.push(event)
+      }
     }
 
-    let eventArray = Object.entries(eventObj)
+    console.log(eventArray);
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault()
-      main.innerHTML = ''
-      let value = input.value
-      let eventId;
-      for (let i = 0; eventArray.length > i; i++) {
-        setTimeout(() => {
-          if (eventArray[i][0].toLowerCase().includes(value)) {
-            eventId = eventArray[i][1]
-            getApiId(eventId)
-          }
-        }, i * 100)
-      }
-      link.setAttribute('rel', 'stylesheet')
-      link.setAttribute('href', 'form.css')
-      head.appendChild(link)
-      webName.remove()
-      formBreak.remove()
-      input.value = ''
-    })
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
   }
+
 }
 
 getEventList()
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  main.innerHTML = ''
+  let value = input.value
+  let eventId;
+  let filteredData = eventArray.filter(event => {
+    if (event[0].toLowerCase().includes(value)) {
+      return event
+    }
+  })
+  filteredData.forEach((event, index) => {
+    setTimeout(() => {
+      getApiId(event[1])
+    }, index * 300);
+
+  })
+  link.setAttribute('rel', 'stylesheet')
+  link.setAttribute('href', 'form.css')
+  head.appendChild(link)
+  webName.remove()
+  formBreak.remove()
+  input.value = ''
+  console.log(filteredData);
+})
 
 // call second API and insert variable in ID field √
 // Store API data from second API √
@@ -64,16 +77,27 @@ getEventList()
 async function getApiId(eventId) {
 
   try {
-    const url = `https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
+    let cors = 'https://boiling-mountain-84087.herokuapp.com/'
+    const url = `${cors}https://app.ticketmaster.com/discovery/v2/events/${eventId}?apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
     const getData = await axios.get(url)
     const idData = getData.data
     let idName = idData.name;
     let idUrl = idData.url;
     let date = idData.dates.start.localDate
-    let priceMin = idData.priceRanges[0].min
-    let priceMax = idData.priceRanges[0].max
+    let priceMin
+    let priceMax
+    // let priceMin = (typeof idData.priceRanges[0] === 'undefined') ? 0 : idData.priceRanges[0].min 
+    if (Object.hasOwnProperty('priceRanges')) {
+      priceMin = idData.priceRanges[0].min
+      priceMax = idData.priceRanges[0].max
+    } else {
+      priceMin = 'Please Check Ticketmaster.com'
+      priceMax = 'Please Check Ticketmaster.com'
+    }
+
     let image = idData.images[5].url
     createDomElements(idName, idUrl, date, priceMin, priceMax, image)
+    return
   }
   catch (error) {
     console.log(error);
@@ -118,16 +142,4 @@ function createDomElements(idName, idUrl, date, priceMin, priceMax, image) {
 
 // POST MVP
 
-// async function secondPageApi() {
-//   try {
-//     let url = 'https://app.ticketmaster.com/discovery/v2/events.json?page=1&size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi'
-//     let getData = await axios.get(url)
-//     let page1Data = getData.data._embedded.events
-//     console.log(page1Data);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// secondPageApi()
 
