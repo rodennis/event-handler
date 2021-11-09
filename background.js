@@ -8,4 +8,4 @@ setInterval(function () {
   if (i == background.length) {
     i = 0;
   }
-}, 3000);
+}, 5000);

@@ -1,6 +1,6 @@
 .form {
   top: 0px;
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid black;
   width: 100%;
   margin-top: -12px;
   padding-bottom: 20px;
@@ -42,4 +42,29 @@ img {
 .eventPicture {
   text-align: center;
 
+}
+
+@media (max-width: 600px) {
+  .form button{
+    margin-top: 0px;
+    width: 50px;
+  }
+
+  .form input {
+    width: 200px;
+  }
+
+  .form {
+    padding: 0px;
+    margin-top: 0px;
+    height: 50px;
+  }
+  
+  img {
+    width: 300px;
+  }
+
+  .info {
+    font-size: 15px;
+  }
 }
