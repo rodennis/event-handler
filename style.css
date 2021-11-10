@@ -11,8 +11,31 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
+
+.red-helm{
+  width: 200px;
+}
+
+.gold-helm {
+  width: 200px;
+}
+.helm1 {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  top: 140px;
+  right: 100px;
+}
+
+.helm2 {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  top: 140px;
+  left: 100px;
+}
+
 
 .name {
   position: absolute;
@@ -65,7 +88,7 @@ input:focus {
   display: none;
 }
 
-@media (max-width:600px) {
+@media (max-width:750px) {
   .name {
     font-size: 80px;
     top: 100px;
@@ -74,4 +97,42 @@ input:focus {
   form input {
     width: 300px
   }
+  .helm1 {
+    top: 250px;
+    left: 50px;
+   }
+ 
+   .helm2 {
+     top: 250px;
+     margin-right: 140px;
+   }
+ 
+   .red-helm {
+     width: 100px;
+   }
+ 
+   .gold-helm {
+     width: 100px;
+   }
+
 }
+
+/* @media (max-width:800px) {
+  .helm1 {
+   top: 250px;
+   left: 50px;
+  }
+
+  .helm2 {
+    top: 250px;
+    margin-right: 140px;
+  }
+
+  .red-helm {
+    width: 100px;
+  }
+
+  .gold-helm {
+    width: 100px;
+  }
+} */

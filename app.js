@@ -4,9 +4,12 @@ let head = document.querySelector('head')
 let formBreak = document.querySelector('.form-break')
 let webName = document.querySelector('.name')
 let main = document.querySelector('main')
+let html = document.querySelector('html')
+let helm1 = document.querySelector('.helm1')
+let helm2 = document.querySelector('.helm2')
 let link = document.createElement('link')
 let h3 = document.createElement('h3')
-let html = document.querySelector('html')
+
 
 
 // Retrieve API √
@@ -42,8 +45,6 @@ async function getEventList() {
   } catch (error) {
     console.log(error);
   }
-  console.log(eventArray);
-
 }
 
 getEventList()
@@ -72,6 +73,8 @@ form.addEventListener('submit', (e) => {
   head.appendChild(link)
   webName.remove()
   formBreak.remove()
+  helm1.remove()
+  helm2.remove()
   input.value = ''
 })
 
@@ -137,3 +140,5 @@ function createDomElements(idName, idUrl, date, priceMin, priceMax, image) {
 // DONE! √
 
 // POST MVP
+// Incorporate user search function √
+// Incorporate buying tickets on website 
