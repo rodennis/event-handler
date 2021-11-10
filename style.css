@@ -72,7 +72,7 @@ input:focus {
 @media (max-width:600px) {
   .name {
     font-size: 80px;
-    top: 80px;
+    top: 100px;
   }
   
   form input {

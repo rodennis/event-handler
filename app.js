@@ -6,6 +6,7 @@ let webName = document.querySelector('.name')
 let main = document.querySelector('main')
 let link = document.createElement('link')
 let h3 = document.createElement('h3')
+let html = document.querySelector('html')
 
 
 // Retrieve API √
@@ -50,6 +51,7 @@ getEventList()
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   main.innerHTML = ''
+  html.style.backgroundImage = 'url(assets/basketball.jpg)'
   let value = input.value
   let filteredData = eventArray.filter(event => {
     if (event[0].toLowerCase().includes(value)) {
