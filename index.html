@@ -9,27 +9,26 @@
     rel="stylesheet">
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="loader.css">
   <script src="app.js" defer></script>
-  <script src="background.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>Event Handler</title>
 </head>
 
 <body>
   <div class="container">
-    <div class="name">
+    <div class="name" id="">
       <h1>Event <br> Handler</h1>
     </div>
-    <div class="form">
+    <div class="loading">Loading&#8230;</div>
+    <div id="form">
       <form id="event-subm" type="submit">
-        <input id="event-search" type="text" placeholder="Search for an Event"><br class="form-break">
-        <button id="search">Search</button>
-
+        <input class="hide" id="event-search" type="text" placeholder="Search for an Event"><br class="form-break">
+        <button class="hide" id="search">Search</button>
     </div>
   </div>
 
   <main>
-    <a href=""></a>
   </main>
 
   </form>
