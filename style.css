@@ -65,10 +65,6 @@ input:focus {
   display: none;
 }
 
-.show {
-  
-}
-
 @media (max-width:600px) {
   .name {
     font-size: 80px;

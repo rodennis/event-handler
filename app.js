@@ -55,7 +55,9 @@ form.addEventListener('submit', (e) => {
   let value = input.value
   let filteredData = eventArray.filter(event => {
     if (event[0].toLowerCase().includes(value)) {
-      return event
+      if (value !== '') {
+        return event
+      }
     }
   })
 
@@ -85,9 +87,9 @@ async function getApiId(eventId) {
     let idName = idData.name;
     let idUrl = idData.url;
     let date = idData.dates.start.localDate
-    let image = idData.images[5].url
-    let priceMin = idData.priceRanges[0].min || 0
-    let priceMax = idData.priceRanges[0].max || 0
+    let image = idData.images[4].url
+    let priceMin = 'Check Ticketmaster.com'
+    let priceMax = 'Check Ticketmaster.com'
 
     createDomElements(idName, idUrl, date, priceMin, priceMax, image)
     return
