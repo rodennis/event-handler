@@ -35,7 +35,6 @@ async function getEventList() {
       const url = `https://app.ticketmaster.com/discovery/v2/events.json?page=${i}&size=200&apikey=psiP2AFkBbKeSzBAKxstCsCzjujE8HMi`
       const getData = await axios.get(url)
       const data = getData.data._embedded.events
-      let eventObj = {}
 
       for (let i = 0; data.length > i; i++) {
         let event = [data[i].name, data[i].id]
