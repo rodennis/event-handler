@@ -7,8 +7,10 @@ let main = document.querySelector('main')
 let html = document.querySelector('html')
 let helm1 = document.querySelector('.helm1')
 let helm2 = document.querySelector('.helm2')
+let button = document.querySelector('#search')
 let link = document.createElement('link')
 let h3 = document.createElement('h3')
+let eventArray = []
 
 
 
@@ -26,8 +28,6 @@ setTimeout(() => {
   let form2 = document.querySelector('button').classList = 'show'
   let loader = document.querySelector('.loading').classList = 'hide'
 }, 8200);
-
-let eventArray = []
 
 async function getEventList() {
   try {
@@ -67,6 +67,7 @@ form.addEventListener('submit', (e) => {
     }, index * 300);
 
   })
+
   link.setAttribute('rel', 'stylesheet')
   link.setAttribute('href', 'form.css')
   head.appendChild(link)
@@ -75,6 +76,11 @@ form.addEventListener('submit', (e) => {
   helm1.remove()
   helm2.remove()
   input.value = ''
+
+  button.setAttribute('disabled', 'disabled')
+  setTimeout(() => {
+    button.toggleAttribute('disabled')
+  }, 10000);
 })
 
 // call second API and insert variable in ID field √
