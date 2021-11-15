@@ -96,8 +96,12 @@ async function getApiId(eventId) {
     let idUrl = idData.url;
     let date = idData.dates.start.localDate
     let image = idData.images[4].url
-    let priceMin = 'Check Ticketmaster.com'
-    let priceMax = 'Check Ticketmaster.com'
+    let priceMin = idData.priceRanges[0].min
+    let priceMax = idData.priceRanges[0].max
+    if (priceMin === '' || priceMin === null || priceMax === '' || priceMax === null) {
+      priceMin = 'check ticketmaster'
+      priceMax = 'check ticketmaster'
+    }
 
     createDomElements(idName, idUrl, date, priceMin, priceMax, image)
     return
