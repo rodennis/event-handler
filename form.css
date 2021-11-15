@@ -72,5 +72,10 @@ img {
 
   .info {
     font-size: 10px;
+    margin-bottom: 0px;
+  }
+
+  main {
+    margin-top: 50px;
   }
 }
