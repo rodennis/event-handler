@@ -77,4 +77,4 @@ Responsive design - This will be the user experience on a mobile device. It will
 | Create Links to Buy tickets | L | 1hr | 1hr | 1hr |
 | CSS Styling | H | 4hrs | 4hrs | 4hrs |
 |Responsiveness | H | 2hrs | 1hr | 1hr |
-| Upload Website | L | 1hr
+| Upload Website | L | 1hr | 1hr | 1hr |
